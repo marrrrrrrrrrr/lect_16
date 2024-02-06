@@ -1,3 +1,3 @@
-# lect_16
+# python_hw
 
 Main branch
