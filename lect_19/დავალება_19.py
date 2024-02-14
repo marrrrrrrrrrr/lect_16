@@ -20,30 +20,34 @@ class Car:
     self._model = model
     self._year = year
 
-
-  def get_brand(self):
+  @property
+  def brand(self):
     return self._brand
   
-  def get_model(self):
+  @property
+  def model(self):
     return self._model
   
-  def get_year(self):
+  @property
+  def year(self):
     return self._year
   
-
-  def set_brand(self, value):
+  @brand.setter
+  def brand(self, value):
     if isinstance(value, str):
       self._brand = value
     else:
       raise ValueError("Brand name should be a string")
     
-  def set_model(self, value):
+  @model.setter  
+  def model(self, value):
     if len(value) < 50:
       self._model = value
     else:
       raise ValueError("Model name is too long")
   
-  def set_year(self, value):
+  @year.setter
+  def year(self, value):
     if isinstance(value, int) and value > 0:
       self._year = value
     else:
@@ -52,9 +56,9 @@ class Car:
 
 
 car = Car()
-car.set_brand("Alfa Romeo")
-car.set_model("105")
-car.set_year(1977)
-print(car.get_brand())
-print(car.get_model())
-print(car.get_year())
+car.brand = "Alfa Romeo"
+car.model ="105"
+car.year =1977
+print(car.brand)
+print(car.model)
+print(car.year)
