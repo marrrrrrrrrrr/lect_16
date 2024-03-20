@@ -75,7 +75,7 @@ class ElectricCar(Vehicle):
         return "Battery capacity is 100 kWh"
     
     def fuel_capacity(self):
-        return super().fuel_capacity() + " (Battery as fuel)" # მიუთითებს იმაზე, რომ საწვავის ძირითადი წყარო არის ბატარეა
+        return super().fuel_capacity() + " (Battery as fuel)"
 
 
 
