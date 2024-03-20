@@ -66,16 +66,21 @@ class ElectricCar(Vehicle):
         return "Battery capacity is 100 kWh"
 '''
 
-class Vehicle:
+
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
     def fuel_capacity(self):
-        return "100 liters"
+        pass
 
 class ElectricCar(Vehicle):
-    def battery_capacity(self):
-        return "Battery capacity is 100 kWh"
-    
     def fuel_capacity(self):
-        return super().fuel_capacity() + " (Battery as fuel)"
+        return "Battery capacity is 100 kWh"
+
+class FuelVehicle(Vehicle):
+    def fuel_capacity(self):
+        return "100 liters"
 
 
 
